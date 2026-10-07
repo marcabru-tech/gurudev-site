@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GuruDev | Ontologia Computacional para IA Geral</title>
+    <title>GuruDev | Representação e verificação semântica para IA</title>
+    <meta name="description" content="GuruDev é uma linguagem para representar regras, entidades e signos e verificar, com evidência rastreável, se saídas de sistemas de IA as respeitam.">
     <style>
         body {
             background-color: #0f0f0f;
@@ -36,6 +37,10 @@
             border-bottom: 2px solid #00ffff;
             padding-bottom: 5px;
         }
+        h3 {
+            color: #f5f5f5;
+            margin-bottom: 5px;
+        }
         .card {
             background-color: #1a1a1a;
             padding: 20px;
@@ -46,9 +51,33 @@
         ul {
             padding-left: 20px;
         }
+        li {
+            margin-bottom: 4px;
+        }
         a {
             color: #00ffff;
             text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+        .tabela {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 1px solid #333;
+            vertical-align: top;
+        }
+        th {
+            color: #00ffff;
+        }
+        .nota {
+            color: #aaa;
+            font-size: 0.95rem;
         }
         footer {
             background-color: #111;
@@ -57,58 +86,114 @@
             color: #aaa;
             font-size: 0.9rem;
         }
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            .container { padding: 24px 16px; }
+            table, tbody, tr, td { display: block; width: 100%; box-sizing: border-box; }
+            tr:first-child { display: none; }
+            tr { border-bottom: 1px solid #333; padding: 8px 0; }
+            td { border-bottom: none; padding: 3px 0; }
+            td::before { content: attr(data-rotulo); display: block; color: #00ffff; font-size: 0.85rem; }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>GuruDev</h1>
-        <p>Ontologia Computacional, IA Geral e Interoperabilidade de Linguagens</p>
+        <p>Representação e verificação semântica para sistemas de IA</p>
     </header>
 
     <div class="container">
         <div class="card">
             <h2>O que é a GuruDev?</h2>
-            <p>GuruDev é uma linguagem de programação de propósito geral, multiparadigma e ontológica, projetada para IA Geral, interoperabilidade nativa entre linguagens, dados multimodais e sistemas complexos. Mais do que código, é uma linguagem da realidade.</p>
+            <p><strong>GuruDev é uma linguagem para representar regras, entidades e signos e verificar, com evidência rastreável, se saídas de sistemas de IA as respeitam.</strong></p>
+            <p>O núcleo da linguagem funciona hoje; o validador semântico é o próximo marco. Em contextos regulados, a resposta de um modelo não basta: é preciso indicar qual regra foi aplicada, sobre quais fatos e com que resultado. A GuruDev é desenvolvida para produzir esse registro de forma determinística, com a IA atuando como observadora do veredito, e não como sua autoridade.</p>
         </div>
 
         <div class="card">
-            <h2>Fundamentos Arquitetônicos</h2>
+            <h2>Para quem</h2>
+            <div class="tabela">
+                <table>
+                    <tr><th>Público</th><th>O que ganha</th><th>Como se envolver</th></tr>
+                    <tr><td data-rotulo="Público">Investidores</td><td data-rotulo="O que ganha">Tese de infraestrutura de verificação semântica para IA, com maturidade declarada por camada e marcos verificáveis</td><td data-rotulo="Como se envolver">Conversa sobre investimento pré-seed</td></tr>
+                    <tr><td data-rotulo="Público">Executivos (C-level)</td><td data-rotulo="O que ganha">Auditabilidade de respostas de IA sobre regras do negócio e da regulação aplicável</td><td data-rotulo="Como se envolver">Piloto ou implantação em um domínio delimitado</td></tr>
+                    <tr><td data-rotulo="Público">Founders de startups</td><td data-rotulo="O que ganha">Camada de representação e validação semântica para produtos baseados em IA</td><td data-rotulo="Como se envolver">Parceria de desenvolvimento ou integração</td></tr>
+                    <tr><td data-rotulo="Público">Decisores de governo</td><td data-rotulo="O que ganha">Verificabilidade e rastreabilidade de sistemas de IA usados em políticas e serviços públicos</td><td data-rotulo="Como se envolver">Pesquisa aplicada ou piloto institucional</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Maturidade</h2>
+            <p>Medida em TRL (Technology Readiness Level, escala de 1 a 9) <strong>por camada; não é um TRL único do produto.</strong></p>
+            <div class="tabela">
+                <table>
+                    <tr><th>Camada</th><th>TRL</th><th>Evidência</th></tr>
+                    <tr><td data-rotulo="Camada">Núcleo da linguagem: lexer, parser, interpretador, classes e contrato de tipos</td><td data-rotulo="TRL">4</td><td data-rotulo="Evidência">Validado em laboratório; testes automatizados em Python 3.10, 3.11 e 3.12</td></tr>
+                    <tr><td data-rotulo="Camada">Tese semântica: entidade, relação, regra e validador</td><td data-rotulo="TRL">3</td><td data-rotulo="Evidência">Arquitetura definida; validador em desenvolvimento</td></tr>
+                    <tr><td data-rotulo="Camada">Arquitetura semiótica: signo, contexto e operadores entre representações</td><td data-rotulo="TRL">2</td><td data-rotulo="Evidência">Conceito formulado</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Arquitetura</h2>
+            <h3>Funciona hoje</h3>
             <ul>
-                <li>Multiparadigma: OO, funcional, lógica, imperativa, declarativa.</li>
-                <li>Interoperabilidade nativa (roadmap: até 2.000 linguagens).</li>
-                <li>Chaveamento serial e paralelo inspirado em circuitos eletrônicos.</li>
-                <li>Sintaxe baseada no espanhol: ¡código! para nativo, ¿linguagem? para interoperável.</li>
-                <li>Loops estruturados como ritornelos musicais.</li>
-                <li>Dados multimodais nativos: texto, áudio, vídeo, imagem, tabela, fórmula.</li>
-                <li>Claves semânticas dos 4 campos do conhecimento + clave geral.</li>
-                <li>Arquitetura baseada na teoria dos sistemas complexos e caos.</li>
+                <li>Linguagem própria com lexer, parser e interpretador, executável por linha de comando.</li>
+                <li>Classes com instanciação, estado, construtor e contrato de tipos dos atributos.</li>
+                <li>Casos gramaticais com efeito na execução, como imutabilidade e isolamento de escopo.</li>
+                <li>Blocos ontológicos com metadados semânticos e tratamento de erro por compensação.</li>
+                <li>Execução de trechos em Python dentro de blocos GuruDev.</li>
+                <li>Claves semânticas dos campos do conhecimento (arte, ciência, filosofia e geral).</li>
+            </ul>
+            <h3>No roteiro</h3>
+            <ul>
+                <li>Regras declaradas na linguagem, com verificação de pureza, aridade e tipos.</li>
+                <li>Validador determinístico com status (válido, violação ou indeterminado) e evidência.</li>
+                <li>Execução de outras linguagens além de Python dentro dos blocos.</li>
+                <li>Representação de signos de diferentes modalidades (texto, imagem, áudio, tabela, fórmula).</li>
+                <li>Execução efetivamente paralela de blocos marcados como paralelos.</li>
+            </ul>
+            <h3>Traços de identidade</h3>
+            <ul>
+                <li>Sintaxe de inspiração espanhola: <code>¡código!</code> para código nativo, <code>¿linguagem?</code> para código de outra linguagem.</li>
+                <li>Laços concebidos como ritornelos musicais, como inspiração de desenho da linguagem.</li>
             </ul>
         </div>
 
         <div class="card">
-            <h2>Base Epistemológica</h2>
+            <h2>Base epistemológica</h2>
+            <p class="nota">Fundamentação teórica que orienta o desenho da linguagem; não descreve, por si, mecanismos computacionais implementados.</p>
             <ul>
                 <li>Sprachlehre – Morfema tridimensional (autor: Guilherme Gonçalves Machado).</li>
                 <li>Geometria Euclidiana Interdisciplinar: ponto, linha, superfície.</li>
-                <li>Semiótica Radical de Charles Sanders Peirce.</li>
+                <li>Semiótica de Charles Sanders Peirce.</li>
                 <li>10 Categorias Ontológicas de Aristóteles.</li>
                 <li>8 Casos Gramaticais Indo-Europeus.</li>
-                <li>7 Níveis de Hermenêutica Filosófica e Religiosa.</li>
+                <li>Níveis de interpretação hermenêutica, filosófica e religiosa (13 registrados no interpretador).</li>
+                <li>Teoria dos sistemas complexos e do caos.</li>
             </ul>
+        </div>
+
+        <div class="card">
+            <h2>Código e documentação</h2>
+            <p>Repositório: <a href="https://github.com/Hubstry-DeepTech/gurudev-core" target="_blank" rel="noopener">github.com/Hubstry-DeepTech/gurudev-core</a></p>
+            <p>Início rápido, estágio e próximos marcos estão no README do repositório.</p>
         </div>
 
         <div class="card">
             <h2>Contato</h2>
-            <p><strong>Guilherme Gonçalves Machado</strong> | Fundador & CEO</p>
-            <p>Email: <a href="mailto:guilhermegmachado22@gmail.com">guilhermegmachado22@gmail.com</a></p>
-            <p>WhatsApp: <a href="https://wa.me/5511994555772" target="_blank">+55 11 99455-5772</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/guilhermegoncalvesmachado/" target="_blank">linkedin.com/in/guilhermegoncalvesmachado</a></p>
-            <p>Substack: <a href="https://substack.com/@guilhermegoncalvesmachado" target="_blank">substack.com/@guilhermegoncalvesmachado</a></p>
+            <p><strong>Guilherme Gonçalves Machado</strong> | Fundador &amp; CEO, Hubstry Deep Tech</p>
+            <p>Email: <a href="mailto:guilhermemachado.ceo@hubstry.dev">guilhermemachado.ceo@hubstry.dev</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/guilhermegoncalvesmachado/" target="_blank" rel="noopener">linkedin.com/in/guilhermegoncalvesmachado</a></p>
+            <p>Substack: <a href="https://substack.com/@guilhermegoncalvesmachado" target="_blank" rel="noopener">substack.com/@guilhermegoncalvesmachado</a></p>
+            <p class="nota">A Hubstry Deep Tech é uma startup pré-seed sediada no Rio de Janeiro.</p>
         </div>
     </div>
 
     <footer>
-        &copy; 2025 GuruDev | Guilherme Gonçalves Machado. Todos os direitos reservados.
+        &copy; 2024-2026 GuruDev | Guilherme Gonçalves Machado · Hubstry Deep Tech. Todos os direitos reservados.
     </footer>
 </body>
 </html>
